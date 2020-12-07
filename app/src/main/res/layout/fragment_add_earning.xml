@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dbe9ff"
+    tools:context="project.stsBHS.dollarfinalproject.ui.income.AddEarning">
+
+    <TextView
+        android:id="@+id/label_Expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Income"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@id/textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select the date:"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="8dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="18dp"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/label_Expense"
+        />
+
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_below="@+id/textView_date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/textView_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Description:"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:paddingLeft="8dp"
+        android:textSize="18dp"
+        android:textAlignment="textStart"
+        android:layout_below="@+id/date_picker"
+        />
+
+    <EditText
+        android:id="@+id/editText_description"
+        android:layout_width="245dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="17dp"
+        android:layout_toRightOf="@+id/textView_description"
+        android:layout_marginTop="33dp"
+        android:layout_below="@id/date_picker"/>
+
+    <TextView
+        android:id="@+id/textView_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:textAlignment="textStart"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/textView_description"
+        android:text="Amount:"
+        android:paddingLeft="8dp"
+        />
+
+    <EditText
+        android:id="@+id/editText_amount"
+        android:layout_width="245dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="45dp"
+        android:layout_toRightOf="@+id/textView_amount"
+        android:layout_marginTop="33dp"
+        android:layout_below="@id/textView_description"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/editText_amount"
+        android:layout_centerHorizontal="true"
+        />
+
+
+
+</RelativeLayout>

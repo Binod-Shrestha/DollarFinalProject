@@ -44,7 +44,14 @@
         android:id="@+id/earningsFragment"
         android:name="project.stsBHS.dollarfinalproject.ui.income.EarningsFragment"
         android:label="fragment_earnings"
-        tools:layout="@layout/fragment_earnings" />
+        tools:layout="@layout/fragment_earnings">
+        <action
+            android:id="@+id/action_earningFragment_to_addEarning"
+            app:destination="@id/addEarning" />
+        <action
+            android:id="@+id/action_earningFragment_to_modifyEarningFragment"
+            app:destination="@id/modifyEarningsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/expenditureFragment"
         android:name="project.stsBHS.dollarfinalproject.ui.expense.ExpenditureFragment"
@@ -72,4 +79,13 @@
         android:name="project.stsBHS.dollarfinalproject."
         android:label="modify_expense_fragment"
         tools:layout="@layout/modify_expense_fragment" />
+    <fragment
+        android:id="@+id/addEarning"
+        android:name="project.stsBHS.dollarfinalproject.ui.income.AddEarning"
+        android:label="AddEarning" />
+    <fragment
+        android:id="@+id/modifyEarningsFragment"
+        android:name="org.sheridancollege.expensetracker.ModifyEarningsFragment"
+        android:label="modify_earnings_fragment"
+        tools:layout="@layout/modify_earnings_fragment" />
 </navigation>
