@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="project.stsBHS.dollarfinalproject.ui.about.AboutFragment">
+    tools:context="ui.about.AboutFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -22,6 +22,7 @@
            android:layout_centerHorizontal="true"
            android:backgroundTint="@color/white"
            android:src="@drawable/img_about"/>
+
        <TextView
            android:id="@+id/aboutFragment"
            android:layout_width="match_parent"

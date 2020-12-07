@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_nav_home_to_summaryFragment)
 
         }
-      //  setHasOptionsMenu(true)
+        setHasOptionsMenu(true)
         return binding.root
 
 
