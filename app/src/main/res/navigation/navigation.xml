@@ -61,7 +61,11 @@
         android:id="@+id/addExpense"
         android:name="project.stsBHS.dollarfinalproject.ui.expense.AddExpense"
         android:label="fragment_add_expense"
-        tools:layout="@layout/fragment_add_expense" />
+        tools:layout="@layout/fragment_add_expense" >
+        <action
+            android:id="@+id/action_addExpense_to_expenditureFragment"
+            app:destination="@id/expenditureFragment" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="project.stsBHS.dollarfinalproject.ui.about.AboutFragment"
@@ -71,5 +75,9 @@
         android:id="@+id/modifyExpenseFragment"
         android:name="project.stsBHS.dollarfinalproject."
         android:label="modify_expense_fragment"
-        tools:layout="@layout/modify_expense_fragment" />
+        tools:layout="@layout/modify_expense_fragment" >
+        <action
+            android:id="@+id/action_modifyExpenseFragment_to_expenditureFragment"
+            app:destination="@id/expenditureFragment" />
+    </fragment>
 </navigation>
