@@ -1,32 +1,32 @@
 package project.stsBHS.dollarfinalproject.ui.expense
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import project.stsBHS.dollarfinalproject.R
+import project.stsBHS.dollarfinalproject.databinding.ModifyExpenseFragmentBinding
 
 class ModifyExpenseFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ModifyExpenseFragment()
-    }
-
-    private lateinit var viewModel: ModifyExpenseViewModel
-
+    private lateinit var binding: ModifyExpenseFragmentBinding
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.modify_expense_fragment, container, false)
-    }
+        binding = ModifyExpenseFragmentBinding.inflate(layoutInflater)
+        binding.btnModify.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_addExpense_to_expenditureFragment)
+        }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ModifyExpenseViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+        binding.btnDelete.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_addExpense_to_expenditureFragment)
+        }
 
+        setHasOptionsMenu(true)
+        return binding.root
+    }
 }
