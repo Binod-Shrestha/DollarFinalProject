@@ -18,6 +18,7 @@ class ModifyExpenseFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         binding = ModifyExpenseFragmentBinding.inflate(layoutInflater)
+
         binding.btnModify.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_addExpense_to_expenditureFragment)
         }
