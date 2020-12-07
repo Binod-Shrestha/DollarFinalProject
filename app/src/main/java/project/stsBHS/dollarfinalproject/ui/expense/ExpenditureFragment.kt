@@ -22,22 +22,14 @@ class ExpenditureFragment : Fragment() {
         binding = FragmentExpenditureBinding.inflate(layoutInflater)
         binding.fab.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_expenditureFragment_to_addExpense)
-
-
         }
 
-        /*var expenseList = generateExpensesList()
-
-        recycleView.adapter = MyRecyclerView(expenseList)
-        recycleView.layoutManager = LinearLayoutManager(this.context)
-        recycleView.setHasFixedSize(true)*/
         setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var expenseList = generateExpensesList()
-
 
         recycleView.adapter = MyRecyclerView(expenseList)
         recycleView.layoutManager = LinearLayoutManager(this.context)
@@ -46,6 +38,8 @@ class ExpenditureFragment : Fragment() {
 
     private fun generateExpensesList(): List<ListItem> {
         val list = ArrayList<ListItem>()
+
+        //Dummy ListItems created for Intermediate submission
         list += ListItem("2020/12/06", "Grocery", 156.55)
         list += ListItem("2020/12/04", "Stationery", 45.99)
 
