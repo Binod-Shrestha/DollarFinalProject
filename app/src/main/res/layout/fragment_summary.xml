@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/summaryFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.summary.SummaryFragment">
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="112dp"
+        android:background="#E60000"
+        android:text="Cancel"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnExpense"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/label_analysis"
+        android:layout_width="364dp"
+        android:layout_height="53dp"
+        android:background="#FFEB3B"
+        android:gravity="center|center_vertical"
+        android:text="Expense out of budget"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.938" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:fadeScrollbars="true"
+        android:theme="@style/NumberPickerStyle"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_calendar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:gravity="center|center_vertical"
+        android:text="Select the date"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="356dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/label_analysis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_marginLeft="30dp"
+                android:text="Expenses"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:text="Inocme"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/label_expense"
+                android:layout_marginLeft="30dp"
+                android:text="$2545.00"
+                android:textColor="#FF0000"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            />
+
+            <TextView
+                android:id="@+id/label_expenditure"
+                android:layout_marginLeft="40dp"
+                android:text="$2300.00"
+                android:textColor="#0E8C13"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

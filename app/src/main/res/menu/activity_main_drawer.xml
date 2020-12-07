@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/expenditureFragment"
+            android:icon="@drawable/ic_shopping"
+            android:title="@string/menu_expense" />
+        <item
+            android:id="@+id/earningsFragment"
+            android:icon="@drawable/ic_dollar"
+            android:title="@string/menu_income" />
+        <item
+            android:id="@+id/summaryFragment"
+            android:icon="@drawable/ic_summary"
+            android:title="@string/menu_summary" />
+    </group>
+</menu>
