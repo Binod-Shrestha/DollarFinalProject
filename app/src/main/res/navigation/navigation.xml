@@ -23,13 +23,12 @@
         <action
             android:id="@+id/action_nav_home_to_expenditureFragment"
             app:destination="@id/expenditureFragment"
-            app:popUpTo="@id/expenditureFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_nav_home_to_aboutFragment"
             app:destination="@id/aboutFragment"
             app:popUpTo="@id/nav_home"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
 
     <fragment
@@ -48,7 +47,7 @@
         tools:layout="@layout/fragment_earnings" />
     <fragment
         android:id="@+id/expenditureFragment"
-        android:name="project.stsBHS.dollarfinalproject.ui."
+        android:name="project.stsBHS.dollarfinalproject.ui.expense.ExpenditureFragment"
         android:label="fragment_expenditure"
         tools:layout="@layout/fragment_expenditure" >
         <action

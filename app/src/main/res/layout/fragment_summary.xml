@@ -5,7 +5,7 @@
     android:id="@+id/summaryFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.summary.SummaryFragment">
+    tools:context="project.stsBHS.dollarfinalproject.ui.summary.SummaryFragment">
 
     <Button
         android:id="@+id/btnCancel"
