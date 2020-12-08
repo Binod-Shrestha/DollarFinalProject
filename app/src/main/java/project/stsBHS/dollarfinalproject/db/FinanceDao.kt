@@ -6,7 +6,7 @@ import project.stsBHS.dollarfinalproject.db.ExpenseEntity
 import java.util.List;
 
 @Dao
-interface ExpenseDao{
+interface FinanceDao{
 
     @Query("SELECT * FROM expenses")
     fun getAllExpenses(): List<ExpenseEntity>
