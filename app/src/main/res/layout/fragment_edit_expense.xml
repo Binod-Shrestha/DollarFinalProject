@@ -3,15 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3CFAAEAE"
-
-    tools:context=".ui.expense.EditExpense">
+    tools:context="project.stsBHS.dollarfinalproject.ui.expense.EditExpense">
 
     <TextView
         android:id="@+id/label_Expense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modify Expense"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="25dp"
         android:layout_marginTop="30dp"
@@ -22,8 +21,9 @@
         android:id="@id/textView_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:text="Select the date:"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:paddingLeft="8dp"
         android:layout_marginLeft="15dp"
         android:textSize="18dp"
@@ -38,8 +38,10 @@
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:datePickerMode="spinner"
+        android:calendarTextColor="@color/black"
         android:calendarViewShown="false"
         android:layout_below="@+id/textView_date"
+        android:theme="@style/NumberPickerStyle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"/>
 
@@ -51,6 +53,7 @@
         android:text="Description:"
         android:layout_marginLeft="15dp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:paddingLeft="8dp"
         android:textSize="18dp"
         android:textAlignment="textStart"
@@ -72,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="15dp"
+        android:textColor="@color/black"
         android:textAlignment="textStart"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -86,11 +90,11 @@
         android:layout_height="40dp"
         android:layout_marginLeft="45dp"
         android:layout_toRightOf="@+id/textView_amount"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@id/textView_description"/>
 
     <Button
-        android:id="@+id/btn_modify"
+        android:id="@+id/btnModify"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Modify"
@@ -100,11 +104,11 @@
         />
 
     <Button
-        android:id="@+id/btn_delete"
+        android:id="@+id/btnDelete"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
-        android:layout_below="@+id/btn_modify"
+        android:layout_below="@+id/btnModify"
         android:layout_centerHorizontal="true"
         android:text="Delete"/>
 

@@ -2,7 +2,7 @@
     <string name="app_name">DollarFinalProject</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">DollarFinalProject</string>
+    <string name="nav_header_title">Expense Tracker</string>
     <string name="nav_header_subtitle">an application to track dollar</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_about">About</string>
