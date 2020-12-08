@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/modifyEarningsFragment"
-        android:name="org.sheridancollege.expensetracker.ModifyEarningsFragment"
+        android:name="project.stsBHS.dollarfinalproject.ui.income.ModifyEarningsFragment"
         android:label="@string/nav_earnings"
         tools:layout="@layout/modify_earnings_fragment">
         <action
