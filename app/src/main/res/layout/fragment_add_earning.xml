@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select the date:"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:paddingLeft="8dp"
         android:layout_marginLeft="15dp"
         android:textSize="18dp"
@@ -35,13 +35,13 @@
     <DatePicker
         android:id="@+id/date_picker"
         android:layout_width="350dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:datePickerMode="spinner"
-        android:theme="@style/NumberPickerStyle"
         android:calendarViewShown="false"
-        android:textColor="@color/black"
         android:layout_below="@+id/textView_date"
         android:layout_centerHorizontal="true"
+        android:calendarTextColor="@color/black"
+        android:theme="@style/NumberPickerStyle"
         android:layout_marginTop="15dp"/>
 
     <TextView
@@ -66,6 +66,7 @@
         android:layout_marginLeft="17dp"
         android:layout_toRightOf="@+id/textView_description"
         android:layout_marginTop="33dp"
+        android:textColor="@color/black"
         android:layout_below="@id/date_picker"/>
 
     <TextView
@@ -89,9 +90,10 @@
         android:layout_height="40dp"
         android:inputType="numberDecimal"
         android:hint="$ 2545.00"
+        android:textColor="@color/black"
         android:layout_marginLeft="45dp"
         android:layout_toRightOf="@+id/textView_amount"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@id/textView_description"/>
 
     <Button

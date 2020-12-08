@@ -8,7 +8,7 @@
     app:contentPadding="4dp"
     app:cardCornerRadius="10dp"
     android:elevation="2dp"
-    app:cardBackgroundColor="#F8F1B5"
+    app:cardBackgroundColor="#A7F0FA"
     >
 
     <RelativeLayout
