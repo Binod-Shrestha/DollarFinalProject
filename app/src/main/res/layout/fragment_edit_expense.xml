@@ -4,9 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3CFAAEAE"
-    tools:showIn="@layout/modify_expense_fragment"
 
-    tools:context=".ui.expense.ModifyExpenseFragment">
+    tools:context=".ui.expense.EditExpense">
 
     <TextView
         android:id="@+id/label_Expense"

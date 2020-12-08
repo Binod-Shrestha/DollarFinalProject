@@ -23,6 +23,10 @@ class ExpenditureFragment : Fragment() {
         binding.fab.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_expenditureFragment_to_addExpense)
         }
+        binding.feb.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_expenditureFragment_to_editExpense)
+
+        }
 
         setHasOptionsMenu(true)
         return binding.root

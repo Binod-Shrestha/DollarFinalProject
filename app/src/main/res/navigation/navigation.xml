@@ -61,9 +61,8 @@
             android:id="@+id/action_expenditureFragment_to_addExpense"
             app:destination="@id/addExpense" />
         <action
-            android:id="@+id/action_expenditureFragment_to_modifyExpenseFragment"
-            app:destination="@id/modifyExpenseFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_expenditureFragment_to_editExpense"
+            app:destination="@id/editExpense" />
     </fragment>
     <fragment
         android:id="@+id/addExpense"
@@ -72,9 +71,7 @@
         tools:layout="@layout/fragment_add_expense">
         <action
             android:id="@+id/action_addExpense_to_expenditureFragment"
-            app:destination="@id/expenditureFragment"
-            app:popUpTo="@id/expenditureFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/expenditureFragment" />
     </fragment>
     <fragment
         android:id="@+id/addEarning"
@@ -100,8 +97,12 @@
         android:label="About"
         tools:layout="@layout/fragment_about" />
     <fragment
-        android:id="@+id/modifyExpenseFragment"
-        android:name="project.stsBHS.dollarfinalproject."
-        android:label="@string/nav_expenditure"
-        tools:layout="@layout/modify_expense_fragment" />
+        android:id="@+id/editExpense"
+        android:name="project.stsBHS.dollarfinalproject.ui.expense.EditExpense"
+        android:label="Expenditure"
+        tools:layout="@layout/fragment_edit_expense" >
+        <action
+            android:id="@+id/action_editExpense_to_expenditureFragment"
+            app:destination="@id/expenditureFragment" />
+    </fragment>
 </navigation>

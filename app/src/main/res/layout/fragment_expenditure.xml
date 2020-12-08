@@ -16,16 +16,28 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="500dp"
         android:clipToPadding="false"
         android:padding="4dp"
         tools:listitem="@layout/expense_item"
         android:layout_marginTop="10dp"
-
         />
 
 
+
 </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/feb"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="@dimen/fab_margin"
+        app:borderWidth="0dp"
+        app:backgroundTint="#2CCABB"
+        app:srcCompat="@drawable/ic_baseline_edit_24" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         app:fabSize="normal"
