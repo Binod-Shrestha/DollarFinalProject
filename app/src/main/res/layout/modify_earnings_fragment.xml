@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3CFAAEAE"
-    tools:context="org.sheridancollege.expensetracker.ModifyEarningsFragment">
+    tools:context="project.stsBHS.dollarfinalproject.ui.income.ModifyEarningsFragment">
 
     <TextView
         android:id="@+id/label_Expense"

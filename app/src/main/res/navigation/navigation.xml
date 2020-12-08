@@ -46,10 +46,10 @@
         android:label="@string/nav_earnings"
         tools:layout="@layout/fragment_earnings">
         <action
-            android:id="@+id/action_earningFragment_to_addEarning"
+            android:id="@+id/action_earningsFragment_to_addEarning"
             app:destination="@id/addEarning" />
         <action
-            android:id="@+id/action_earningFragment_to_modifyEarningFragment"
+            android:id="@+id/action_earningsFragment_to_modifyEarningsFragment"
             app:destination="@id/modifyEarningsFragment" />
     </fragment>
     <fragment
@@ -79,7 +79,7 @@
         android:label="@string/nav_earnings"
         tools:layout="@layout/fragment_add_earning">
         <action
-            android:id="@+id/action_addExpense_to_earningsFragment"
+            android:id="@+id/action_addEarning_to_earningsFragment"
             app:destination="@id/earningsFragment" />
     </fragment>
     <fragment
@@ -88,7 +88,7 @@
         android:label="@string/nav_earnings"
         tools:layout="@layout/modify_earnings_fragment">
         <action
-            android:id="@+id/action_modifyEarningsFragment_to_incFragment"
+            android:id="@+id/action_modifyEarningsFragment_to_earningsFragment"
             app:destination="@id/earningsFragment" />
     </fragment>
     <fragment

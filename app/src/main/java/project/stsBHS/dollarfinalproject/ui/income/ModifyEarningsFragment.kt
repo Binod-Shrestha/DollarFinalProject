@@ -1,30 +1,33 @@
-package org.sheridancollege.expensetracker
+package project.stsBHS.dollarfinalproject.ui.income
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import project.stsBHS.dollarfinalproject.R
+import project.stsBHS.dollarfinalproject.databinding.ModifyEarningsFragmentBinding
 
 class ModifyEarningsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ModifyEarningsFragment()
+    private lateinit var binding: ModifyEarningsFragmentBinding
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = ModifyEarningsFragmentBinding.inflate(layoutInflater)
+
+        binding.btnModifyEarning.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_modifyEarningsFragment_to_earningsFragment)
+        }
+
+        binding.btnDeleteEarning.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_modifyEarningsFragment_to_earningsFragment)
+        }
+
+        setHasOptionsMenu(true)
+        return binding.root
     }
-
-    private lateinit var viewModel: ModifyEarningsViewModel
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.modify_earnings_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ModifyEarningsViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }
