@@ -43,7 +43,7 @@ class ExpenditureFragment : Fragment() {
             uiThread {
                 if (expenses != null) {
                     for (expense in expenses) {
-                        expenseList += ListItem(expense.date, expense.description, expense.amount)
+                        expenseList += ListItem(expense.id, expense.date, expense.description, expense.amount)
                     }
                 }
                 recycleView.adapter = MyRecyclerView(expenseList)
