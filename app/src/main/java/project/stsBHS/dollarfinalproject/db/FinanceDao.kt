@@ -12,7 +12,7 @@ interface FinanceDao{
     fun getAllExpenses(): List<ExpenseEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(student: ExpenseEntity)
+    fun insert(expense: ExpenseEntity)
 
     @Query("Delete FROM expenses")
     fun deleteALL()

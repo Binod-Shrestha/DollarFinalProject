@@ -8,7 +8,7 @@ import project.stsBHS.dollarfinalproject.FinanceDao
 
 @Database(entities = [ExpenseEntity::class], version = 1)
 abstract class FinanceDatabase : RoomDatabase() {
-        abstract fun expenseDao(): FinanceDao
+        abstract fun financeDao(): FinanceDao
 
         companion object {
 
