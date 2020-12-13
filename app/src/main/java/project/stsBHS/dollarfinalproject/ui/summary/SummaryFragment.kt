@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.databinding.FragmentSummaryBinding
+import kotlin.math.exp
 
 
 class SummaryFragment : Fragment() {
@@ -43,9 +44,19 @@ class SummaryFragment : Fragment() {
             var year = year
                 var day = dayOfMonth
                 var month = monthOfYear
-                binding.labelAnalysis.text = "Date Changed : $year/$month/$day"
+               // binding.labelAnalysis.text = "Date Changed : $year/$month/$day"
             }
         )
+        var income = 4
+        var expense = 4
+        when {
+            income > expense -> binding.labelAnalysis.text = "Expense More"
+            income < expense -> binding.labelAnalysis.text = "Good Saving"
+
+            else -> binding.labelAnalysis.text = "Break Even"
+        }
+
+
     }
 
 }
