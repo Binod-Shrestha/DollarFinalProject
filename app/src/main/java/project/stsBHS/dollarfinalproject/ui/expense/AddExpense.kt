@@ -28,7 +28,7 @@ class AddExpense : Fragment() {
             var desc = binding.editTextDescription.text.toString()
             var amount = binding.editTextAmount.text.toString().toDouble()
             var year = binding.datePicker.year.toString()
-            var month = binding.datePicker.month.toString()
+            var month = (binding.datePicker.month.toString().toInt() + 1).toString()
             var day = binding.datePicker.dayOfMonth.toString()
             var date = "$year/$month/$day"
 

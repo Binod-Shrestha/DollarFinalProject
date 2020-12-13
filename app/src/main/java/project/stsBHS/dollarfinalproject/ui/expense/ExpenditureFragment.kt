@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_expenditure.*
+import kotlinx.android.synthetic.main.fragment_expenditure.*import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.databinding.FragmentExpenditureBinding
+import project.stsBHS.dollarfinalproject.db.FinanceDatabase
 
 class ExpenditureFragment : Fragment() {
 
@@ -33,20 +35,21 @@ class ExpenditureFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var expenseList = generateExpensesList()
+        val expenseList = ArrayList<ListItem>()
+        var db = context?.let { FinanceDatabase.getInstance(it) }
 
-        recycleView.adapter = MyRecyclerView(expenseList)
-        recycleView.layoutManager = LinearLayoutManager(this.context)
-        recycleView.setHasFixedSize(true)
-    }
-
-    private fun generateExpensesList(): List<ListItem> {
-        val list = ArrayList<ListItem>()
-
-        //Dummy ListItems created for Intermediate submission
-        list += ListItem("2020/12/06", "Grocery", 156.55)
-        list += ListItem("2020/12/04", "Stationery", 45.99)
-
-        return list
+        doAsync {
+            var expenses = db?.financeDao()?.getAllExpenses()
+            uiThread {
+                if (expenses != null) {
+                    for (expense in expenses) {
+                        expenseList += ListItem(expense.date, expense.description, expense.amount)
+                    }
+                }
+                recycleView.adapter = MyRecyclerView(expenseList)
+                recycleView.layoutManager = LinearLayoutManager(view.context)
+                recycleView.setHasFixedSize(true)
+            }
+        }
     }
 }
