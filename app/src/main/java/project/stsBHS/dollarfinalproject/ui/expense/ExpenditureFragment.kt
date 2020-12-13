@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_expenditure.*import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import kotlinx.android.synthetic.main.fragment_expenditure.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.support.v4.uiThread
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.databinding.FragmentExpenditureBinding
 import project.stsBHS.dollarfinalproject.db.FinanceDatabase
