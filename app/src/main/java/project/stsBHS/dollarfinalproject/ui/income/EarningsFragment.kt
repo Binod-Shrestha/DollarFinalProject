@@ -11,10 +11,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_expenditure.*
-import org.sheridancollege.expensetracker.ListItem
-import org.sheridancollege.expensetracker.MyRecyclerView
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.support.v4.uiThread
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.databinding.FragmentEarningsBinding
+import project.stsBHS.dollarfinalproject.db.FinanceDatabase
 
 class EarningsFragment : Fragment() {
 
@@ -37,22 +38,21 @@ class EarningsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val earningList = ArrayList<ListItem>()
+        var db = context?.let { FinanceDatabase.getInstance(it) }
 
-
-
-        var incomeList = generateIncomeList()
-
-
-        recycleView.adapter = MyRecyclerView(incomeList)
-        recycleView.layoutManager = LinearLayoutManager(this.context)
-        recycleView.setHasFixedSize(true)
-    }
-
-    private fun generateIncomeList(): List<ListItem> {
-        val list = ArrayList<ListItem>()
-        list += ListItem("2020/12/06", "Payroll", 2500.00)
-        list += ListItem("2020/12/04", "Benefits", 65.78)
-
-        return list
+        doAsync {
+            var earnings = db?.financeDao()?.getAllEarnings()
+            uiThread {
+                if (earnings != null) {
+                    for (earning in earnings) {
+                        earningList += ListItem(earning.id, earning.date, earning.description, earning.amount)
+                    }
+                }
+                recycleView.adapter = MyRecyclerView(earningList)
+                recycleView.layoutManager = LinearLayoutManager(view.context)
+                recycleView.setHasFixedSize(true)
+            }
+        }
     }
 }

@@ -1,5 +1,4 @@
-package org.sheridancollege.expensetracker
-
+package project.stsBHS.dollarfinalproject.ui.income
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
