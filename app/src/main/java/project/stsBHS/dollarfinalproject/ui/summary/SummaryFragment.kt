@@ -62,7 +62,7 @@ class SummaryFragment : Fragment() {
         month_picker.wrapSelectorWheel = true
         month_picker.displayedValues = months
         month_picker.setOnValueChangedListener { picker, oldVal, newVal ->
-            binding.labelAnalysis.text = "$newVal"
+           // binding.labelAnalysis.text = "$newVal"
         }
 
         var db = context?.let { FinanceDatabase.getInstance(it) }
@@ -70,32 +70,30 @@ class SummaryFragment : Fragment() {
         var totalIncome: Double = 0.0
         doAsync {
             var expenses = db?.financeDao()?.getAllExpenses()
-            // var incomes = db?.financeDao()?.getAllIncomes()
             if (expenses != null) {
                 for (x in expenses) totalExpense += x.amount
 
             }
+            //for incomes
+           // var incomes = db?.financeDao()?.getAllIncomes()
+            //if (incomes != null) {
+            //    for(x in incomes) totalIncome += x.incomes
+           // }
             uiThread {
                 totalExpense = (((totalExpense * 100).toInt()).toDouble()) / 100
                 totalIncome = (((totalIncome * 100).toInt()).toDouble()) / 100
                 binding.labelExpense.text = "$ " + totalExpense.toString()
                 binding.labelIncome.text = "$ " + totalIncome.toString()
             }
-            //            if (incomes != null) {
-            //                for(x in incomes){
-            //                    totalIncome += incomes
-            //
-            //                }
-            //
-            //            }
+
 
         }
 
 
         // Analysis of income and expense
         when {
-            totalIncome > totalExpense -> binding.labelAnalysis.text = "Expense More"
-            totalIncome < totalExpense -> binding.labelAnalysis.text = "Good Saving"
+            totalIncome > totalExpense -> binding.labelAnalysis.text = "Saving Good"
+            totalIncome < totalExpense -> binding.labelAnalysis.text = "Conrol your Expense"
             else -> binding.labelAnalysis.text = "Break Even"
         }
 
