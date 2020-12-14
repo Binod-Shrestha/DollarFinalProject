@@ -16,4 +16,6 @@ interface FinanceDao{
 
     @Query("Delete FROM expenses")
     fun deleteALL()
+
+   
 }
