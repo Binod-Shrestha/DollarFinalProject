@@ -1,7 +1,6 @@
-package project.stsBHS.dollarfinalproject
+package project.stsBHS.dollarfinalproject.db
 
 import androidx.room.*;
-import project.stsBHS.dollarfinalproject.db.ExpenseEntity
 
 import java.util.List;
 
@@ -15,7 +14,14 @@ interface FinanceDao{
     fun insert(expense: ExpenseEntity)
 
     @Query("Delete FROM expenses")
-    fun deleteALL()
+    fun deleteALLExpenses()
 
-   
+    @Query("SELECT * FROM incomes")
+    fun getAllEarnings(): List<IncomeEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(earning: IncomeEntity)
+
+    @Query("Delete FROM incomes")
+    fun deleteALLEarnings()
 }
