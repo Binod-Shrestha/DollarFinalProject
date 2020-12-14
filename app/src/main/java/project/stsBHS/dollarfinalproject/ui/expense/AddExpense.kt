@@ -26,7 +26,7 @@ class AddExpense : Fragment() {
         binding.btnAdd.setOnClickListener{ view: View ->
 
             var desc = binding.editTextDescription.text.toString()
-            var amount = binding.editTextAmount.text.toString().toDouble()
+            var amount = (((binding.editTextAmount.text.toString().toDouble() * 100).toInt()).toDouble())/100
             var year = binding.datePicker.year.toString()
             var month = (binding.datePicker.month.toString().toInt() + 1).toString()
             var day = binding.datePicker.dayOfMonth.toString()
