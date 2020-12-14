@@ -1,4 +1,7 @@
-package project.stsBHS.dollarfinalproject
+//Author: Hemraj Kafle
+//Student#: 991511170
+
+package project.stsBHS.dollarfinalproject.db
 
 import androidx.room.*;
 import project.stsBHS.dollarfinalproject.db.ExpenseEntity
@@ -6,6 +9,7 @@ import project.stsBHS.dollarfinalproject.db.IncomeEntity
 
 import java.util.List;
 
+//Data Access Object to communicate with the database
 @Dao
 interface FinanceDao{
 

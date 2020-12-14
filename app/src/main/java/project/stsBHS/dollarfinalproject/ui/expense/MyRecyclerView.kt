@@ -1,3 +1,6 @@
+//Author: Hemraj Kafle
+//Student#: 991511170
+
 package project.stsBHS.dollarfinalproject.ui.expense
 
 import project.stsBHS.dollarfinalproject.ListItem
@@ -14,10 +17,11 @@ import org.jetbrains.anko.sdk27.coroutines.onCheckedChange
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.Session
 
+//RecyclerView adapter class
 class MyRecyclerView(private val sampleList: List<ListItem>): RecyclerView.Adapter<MyRecyclerView.MyViewHolder>() {
 
+    //returns ViewHolder for the given itemView
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-
         val date: TextView = itemView.textView_date
         val description: TextView = itemView.textView_description
         val amount: TextView =itemView.textView_amount
@@ -31,10 +35,17 @@ class MyRecyclerView(private val sampleList: List<ListItem>): RecyclerView.Adapt
             parent, false
         )
 
+        //retrieving cardView for the selected itemView
         var card = MyViewHolder(itemView)
-        var session: Session = Session(itemView.context)
+
+        //creating session object
+        var session = Session(itemView.context)
+
+        //setting 0 as adefault value for the id in session
         session.setSelectedId("0")
 
+        //onclick listener for rdoModify radio button
+        //sets the id of selected card as the id in session
         itemView.rdoModify.onCheckedChange { buttonView, isChecked ->
             session.setSelectedId(card.id.text.toString())
         }

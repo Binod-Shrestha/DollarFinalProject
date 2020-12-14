@@ -1,3 +1,8 @@
+//Author: Hemraj Kafle
+//Student#: 991511170
+
+//This fragment contains UI layouts for editing or deleting existing Expense entity in the db
+
 package project.stsBHS.dollarfinalproject.ui.expense
 
 import android.os.Bundle
@@ -14,6 +19,7 @@ import project.stsBHS.dollarfinalproject.databinding.FragmentEditExpenseBinding
 import project.stsBHS.dollarfinalproject.db.ExpenseEntity
 import project.stsBHS.dollarfinalproject.db.FinanceDatabase
 
+//This kotlin class provides backend functionality to FragmentEditExpense
 class EditExpense : Fragment() {
 
     private lateinit var binding: FragmentEditExpenseBinding
@@ -22,15 +28,21 @@ class EditExpense : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
+        //get the id of selected cardView from Session
         var session = Session(context)
         var item = session.getSelectedId()?.toLong()
 
+        //instance of db object
         var db = context?.let { FinanceDatabase.getInstance(it) }
 
         binding = FragmentEditExpenseBinding.inflate(layoutInflater)
 
+        //onclick function for Modify button
         binding.btnModify.setOnClickListener{ view: View ->
             doAsync {
+
+                //retrieve the required values from fragments
                 var id = item
                 var year = binding.datePicker.year.toString()
                 var month = (binding.datePicker.month.toString().toInt() + 1).toString()
@@ -39,8 +51,9 @@ class EditExpense : Fragment() {
                 var desc = binding.editTextDescription.text.toString()
                 var amount = (((binding.editTextAmount.text.toString().toDouble() * 100).toInt()).toDouble())/100
 
-                var entity = item?.let { ExpenseEntity(it, date, desc, amount) }
+                var entity = id?.let { ExpenseEntity(it, date, desc, amount) }
 
+                //updates the record in db if entity is not null
                 doAsync {
                     if (entity != null) {
                         db?.financeDao()?.updateExpense(entity)
@@ -51,6 +64,7 @@ class EditExpense : Fragment() {
             view.findNavController().navigate(R.id.action_editExpense_to_expenditureFragment)
         }
 
+        //onclick function for delete button
         binding.btnDelete.setOnClickListener{ view: View ->
             doAsync {
                 db?.financeDao()?.deleteExpense(item)
@@ -61,6 +75,7 @@ class EditExpense : Fragment() {
 
 
 
+        //set the values retrived from db to the textboxes
         doAsync {
             var expense = db?.financeDao()?.getExpense(item)
             uiThread {

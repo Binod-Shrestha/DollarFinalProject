@@ -1,3 +1,6 @@
+//Author: Hemraj Kafle
+//Student#: 991511170
+
 package project.stsBHS.dollarfinalproject.ui.expense
 
 import android.os.Bundle
@@ -13,6 +16,7 @@ import project.stsBHS.dollarfinalproject.db.ExpenseEntity
 import project.stsBHS.dollarfinalproject.db.FinanceDatabase
 import org.jetbrains.anko.doAsync
 
+//This kotlin class provides backend functionality to AddExpenseFragment
 class AddExpense : Fragment() {
 
     private lateinit var binding: FragmentAddExpenseBinding
@@ -25,6 +29,7 @@ class AddExpense : Fragment() {
 
         binding.btnAdd.setOnClickListener{ view: View ->
 
+            //retrive the values of datepickers and editTexts from the fragment
             var desc = binding.editTextDescription.text.toString()
             var amount = (((binding.editTextAmount.text.toString().toDouble() * 100).toInt()).toDouble())/100
             var year = binding.datePicker.year.toString()
@@ -32,9 +37,11 @@ class AddExpense : Fragment() {
             var day = binding.datePicker.dayOfMonth.toString()
             var date = "$year/$month/$day"
 
+            //print toast message if clicked without inputting values
             if(desc == null || amount == null){
                 Toast.makeText(this.context, "Please fill out all fields!!!", Toast.LENGTH_SHORT).show()
             }else{
+                //inserts to the database
                 doAsync{
                     var expense = ExpenseEntity(0, date, desc, amount)
                     var db = context?.let { FinanceDatabase.getInstance(it) }

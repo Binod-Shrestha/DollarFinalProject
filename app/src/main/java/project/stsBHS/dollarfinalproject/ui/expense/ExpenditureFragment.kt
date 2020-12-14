@@ -1,3 +1,10 @@
+//Author: Hemraj Kafle
+//Student#: 991511170
+
+//This fragment contains UI layouts for showing the list of Expense entity from expenses table in database
+
+
+
 package project.stsBHS.dollarfinalproject.ui.expense
 
 import project.stsBHS.dollarfinalproject.ListItem
@@ -17,6 +24,8 @@ import project.stsBHS.dollarfinalproject.Session
 import project.stsBHS.dollarfinalproject.databinding.FragmentExpenditureBinding
 import project.stsBHS.dollarfinalproject.db.FinanceDatabase
 
+//This kotlin class provides backend functionality to FragmentExpenditure
+
 class ExpenditureFragment : Fragment() {
 
     private lateinit var binding: FragmentExpenditureBinding
@@ -28,10 +37,12 @@ class ExpenditureFragment : Fragment() {
 
         binding = FragmentExpenditureBinding.inflate(layoutInflater)
 
+        //onclick function for add button
         binding.fab.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_expenditureFragment_to_addExpense)
         }
 
+        //onclick function for edit/delete button
         binding.feb.setOnClickListener{ view: View ->
             var session = Session(context)
             var item = session.getSelectedId()
