@@ -5,7 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.earnings_item.view.*
 import kotlinx.android.synthetic.main.expense_item.view.*
+import kotlinx.android.synthetic.main.expense_item.view.textView_amount
+import kotlinx.android.synthetic.main.expense_item.view.textView_date
+import kotlinx.android.synthetic.main.expense_item.view.textView_description
 import project.stsBHS.dollarfinalproject.R
 
 class MyRecyclerView(private val sampleList: List<ListItem>): RecyclerView.Adapter<MyRecyclerView.MyViewHolder>() {
@@ -15,6 +19,7 @@ class MyRecyclerView(private val sampleList: List<ListItem>): RecyclerView.Adapt
         val date: TextView = itemView.textView_date
         val description: TextView = itemView.textView_description
         val amount: TextView =itemView.textView_amount
+        var id: Int = itemView.id
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -35,5 +40,6 @@ class MyRecyclerView(private val sampleList: List<ListItem>): RecyclerView.Adapt
         holder.description.text= currentItem.description
         holder.date.text=currentItem.date
         holder.amount.text = currentItem.amount.toString()
+        holder.id = currentItem.id.toInt()
     }
 }
