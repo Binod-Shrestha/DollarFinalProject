@@ -35,14 +35,11 @@ class MyRecyclerView(private val sampleList: List<ListItem>): RecyclerView.Adapt
         )
 
         var card = MyViewHolder(itemView)
+        var session: Session = Session(itemView.context)
+        session.setSelectedId("0")
 
         itemView.rdoModify.onCheckedChange { buttonView, isChecked ->
-
-            val id = card.id.text.toString()
-            var session: Session = Session(itemView.context)
-            session.setSelectedId(id)
-            Toast.makeText(itemView.getContext(), "Checked..." + id, Toast.LENGTH_LONG).show();
-
+            session.setSelectedId(card.id.text.toString())
         }
         return MyViewHolder(itemView)
     }

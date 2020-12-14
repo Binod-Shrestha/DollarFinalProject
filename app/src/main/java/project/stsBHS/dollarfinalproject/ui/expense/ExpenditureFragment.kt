@@ -26,14 +26,16 @@ class ExpenditureFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentExpenditureBinding.inflate(layoutInflater)
+
         binding.fab.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_expenditureFragment_to_addExpense)
         }
+
         binding.feb.setOnClickListener{ view: View ->
             var session = Session(context)
             var item = session.getSelectedId()
-
 
             if(item?.toInt()!! > 0){
                 view.findNavController().navigate(R.id.action_expenditureFragment_to_editExpense)

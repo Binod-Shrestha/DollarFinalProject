@@ -40,7 +40,7 @@ class EditExpense : Fragment() {
                 var day = binding.datePicker.dayOfMonth.toString()
                 var date = "$year/$month/$day"
                 var desc = binding.editTextDescription.text.toString()
-                var amount = binding.editTextAmount.text.toString().toDouble()
+                var amount = (((binding.editTextAmount.text.toString().toDouble() * 100).toInt()).toDouble())/100
 
                 var entity = item?.let { ExpenseEntity(it, date, desc, amount) }
 
