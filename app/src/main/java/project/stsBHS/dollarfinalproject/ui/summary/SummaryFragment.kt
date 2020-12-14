@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.databinding.FragmentSummaryBinding
 import project.stsBHS.dollarfinalproject.db.FinanceDatabase
+import java.util.*
 
 
 class SummaryFragment : Fragment() {
@@ -17,27 +19,43 @@ class SummaryFragment : Fragment() {
     private var _binding: FragmentSummaryBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = FragmentSummaryBinding.inflate(
-            inflater, container, false)
+            inflater, container, false
+        )
 
-        binding.btnCancel.setOnClickListener{ view: View ->
+        binding.btnCancel.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_summaryFragment_to_nav_home)
         }
         return binding.root
-        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var year_picker = binding.yearPicker
-        year_picker.minValue = 2000
-        year_picker.maxValue = 2050
+        var currentYear = Calendar.getInstance().get(Calendar.YEAR)
+        year_picker.minValue = currentYear - 5
+        year_picker.maxValue = currentYear
         year_picker.wrapSelectorWheel = true
         year_picker.setOnValueChangedListener { picker, oldVal, newVal ->
-          //binding.labelAnalysis.text = "$newVal"
         }
-        val months = arrayOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+        val months = arrayOf(
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        )
         var month_picker = binding.monthPicker
         month_picker.minValue = 1
         month_picker.maxValue = months.size
@@ -52,18 +70,25 @@ class SummaryFragment : Fragment() {
         var totalIncome: Double = 0.0
         doAsync {
             var expenses = db?.financeDao()?.getAllExpenses()
-           // var incomes = db?.financeDao()?.getAllIncomes()
+            // var incomes = db?.financeDao()?.getAllIncomes()
             if (expenses != null) {
-            for(x in expenses) totalExpense += x.amount
+                for (x in expenses) totalExpense += x.amount
 
-        }
-//            if (incomes != null) {
-//                for(x in incomes){
-//                    totalIncome += incomes
-//
-//                }
-//
-//            }
+            }
+            uiThread {
+                totalExpense = (((totalExpense * 100).toInt()).toDouble()) / 100
+                totalIncome = (((totalIncome * 100).toInt()).toDouble()) / 100
+                binding.labelExpense.text = "$ " + totalExpense.toString()
+                binding.labelIncome.text = "$ " + totalIncome.toString()
+            }
+            //            if (incomes != null) {
+            //                for(x in incomes){
+            //                    totalIncome += incomes
+            //
+            //                }
+            //
+            //            }
+
         }
 
 
@@ -76,6 +101,7 @@ class SummaryFragment : Fragment() {
 
 
     }
+
 
 }
 
