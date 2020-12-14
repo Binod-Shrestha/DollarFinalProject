@@ -1,14 +1,11 @@
 package project.stsBHS.dollarfinalproject.ui.expense
 
-import android.provider.MediaStore
+import project.stsBHS.dollarfinalproject.ListItem
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.view.isVisible
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.earnings_item.view.*
 import kotlinx.android.synthetic.main.expense_item.view.*
 import kotlinx.android.synthetic.main.expense_item.view.textView_amount
 import kotlinx.android.synthetic.main.expense_item.view.textView_date

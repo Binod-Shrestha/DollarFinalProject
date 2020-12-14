@@ -70,27 +70,27 @@ class SummaryFragment : Fragment() {
         var totalIncome: Double = 0.0
         doAsync {
             var expenses = db?.financeDao()?.getAllExpenses()
-            // var incomes = db?.financeDao()?.getAllIncomes()
+            var incomes = db?.financeDao()?.getAllIncomes()
+
             if (expenses != null) {
                 for (x in expenses) totalExpense += x.amount
-
             }
+
+            if (incomes != null) {
+                for(x in incomes){
+                    totalIncome += x.amount
+                }
+            }
+
             uiThread {
                 totalExpense = (((totalExpense * 100).toInt()).toDouble()) / 100
                 totalIncome = (((totalIncome * 100).toInt()).toDouble()) / 100
                 binding.labelExpense.text = "$ " + totalExpense.toString()
                 binding.labelIncome.text = "$ " + totalIncome.toString()
             }
-            //            if (incomes != null) {
-            //                for(x in incomes){
-            //                    totalIncome += incomes
-            //
-            //                }
-            //
-            //            }
+
 
         }
-
 
         // Analysis of income and expense
         when {
@@ -98,11 +98,7 @@ class SummaryFragment : Fragment() {
             totalIncome < totalExpense -> binding.labelAnalysis.text = "Good Saving"
             else -> binding.labelAnalysis.text = "Break Even"
         }
-
-
     }
-
-
 }
 
 

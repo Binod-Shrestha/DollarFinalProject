@@ -6,11 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_expenditure.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.support.v4.uiThread
-import org.w3c.dom.Entity
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.Session
 import project.stsBHS.dollarfinalproject.databinding.FragmentEditExpenseBinding
@@ -56,7 +53,7 @@ class EditExpense : Fragment() {
 
         binding.btnDelete.setOnClickListener{ view: View ->
             doAsync {
-                db?.financeDao()?.deleteAExpense(item)
+                db?.financeDao()?.deleteExpense(item)
             }
 
             view.findNavController().navigate(R.id.action_editExpense_to_expenditureFragment)

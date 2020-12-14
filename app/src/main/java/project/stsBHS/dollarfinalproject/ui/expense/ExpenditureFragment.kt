@@ -1,5 +1,6 @@
 package project.stsBHS.dollarfinalproject.ui.expense
 
+import project.stsBHS.dollarfinalproject.ListItem
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.expense_item.view.*
 import kotlinx.android.synthetic.main.fragment_expenditure.*
-import kotlinx.android.synthetic.main.fragment_expenditure.view.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.support.v4.uiThread
 import project.stsBHS.dollarfinalproject.R

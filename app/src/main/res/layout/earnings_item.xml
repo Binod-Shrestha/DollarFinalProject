@@ -17,8 +17,15 @@
         android:layout_height="match_parent"
         android:padding="8dp">
 
+        <TextView
+            android:id="@+id/txt_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:visibility="gone"/>
+
         <RadioButton
-            android:id="@id/btnModify"
+            android:id="@id/rdoModify"
             android:layout_width="50dp"
             android:layout_height="45dp"
             android:textSize="18dp"
@@ -31,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:textColor="@android:color/black"
-            android:layout_toRightOf="@id/btnModify"
+            android:layout_toRightOf="@id/rdoModify"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -40,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_description"
-            android:layout_toRightOf="@id/btnModify"
+            android:layout_toRightOf="@id/rdoModify"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:text="Date" />

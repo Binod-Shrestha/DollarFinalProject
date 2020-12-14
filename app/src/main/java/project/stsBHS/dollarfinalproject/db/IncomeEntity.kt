@@ -10,14 +10,14 @@ import androidx.room.PrimaryKey
 data class IncomeEntity(
 
         @PrimaryKey(autoGenerate = true)
-    var id: Long,
+        var id: Long,
 
         @ColumnInfo(name = "date")
-    var date: String,
+        var date: String,
 
         @ColumnInfo(name = "description")
-    var description: String,
+        var description: String,
 
         @ColumnInfo(name = "amount")
-    var amount: Double
+        var amount: Double
 )

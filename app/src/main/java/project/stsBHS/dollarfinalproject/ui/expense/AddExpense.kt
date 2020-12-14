@@ -38,7 +38,7 @@ class AddExpense : Fragment() {
                 doAsync{
                     var expense = ExpenseEntity(0, date, desc, amount)
                     var db = context?.let { FinanceDatabase.getInstance(it) }
-                    db?.financeDao()?.insert(expense)
+                    db?.financeDao()?.insertExpense(expense)
                 }
 
                 Toast.makeText(this.context, "Record added to database", Toast.LENGTH_SHORT).show()

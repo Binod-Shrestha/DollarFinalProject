@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase
 import android.content.Context
 import project.stsBHS.dollarfinalproject.FinanceDao
 
-@Database(entities = [ExpenseEntity::class], version = 1)
+@Database(entities = [ExpenseEntity::class, IncomeEntity::class], version = 1)
 abstract class FinanceDatabase : RoomDatabase() {
         abstract fun financeDao(): FinanceDao
 
@@ -20,7 +20,7 @@ abstract class FinanceDatabase : RoomDatabase() {
                                 INSTANCE = Room.databaseBuilder(
                                         context,
                                         FinanceDatabase::class.java,
-                                        "expenses.db")
+                                        "finances.db")
                                         .build()
                         }
                         return INSTANCE as FinanceDatabase
