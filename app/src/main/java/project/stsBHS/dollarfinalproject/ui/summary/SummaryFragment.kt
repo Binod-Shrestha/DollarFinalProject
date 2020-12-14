@@ -70,10 +70,13 @@ class SummaryFragment : Fragment() {
         var totalIncome: Double = 0.0
         doAsync {
             var expenses = db?.financeDao()?.getAllExpenses()
-            // var incomes = db?.financeDao()?.getAllIncomes()
             if (expenses != null) {
                 for (x in expenses) totalExpense += x.amount
 
+            }
+            var incomes = db?.financeDao()?.getAllIncomes()
+            if (incomes != null) {
+                for(x in incomes) totalIncome += x.incomes
             }
             uiThread {
                 totalExpense = (((totalExpense * 100).toInt()).toDouble()) / 100
@@ -81,13 +84,14 @@ class SummaryFragment : Fragment() {
                 binding.labelExpense.text = "$ " + totalExpense.toString()
                 binding.labelIncome.text = "$ " + totalIncome.toString()
             }
-            //            if (incomes != null) {
-            //                for(x in incomes){
-            //                    totalIncome += incomes
-            //
-            //                }
-            //
-            //            }
+
+
+                    doAsync {
+
+
+
+                    }
+
 
         }
 
