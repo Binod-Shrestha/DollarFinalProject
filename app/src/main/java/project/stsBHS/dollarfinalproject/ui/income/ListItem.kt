@@ -1,3 +1,3 @@
-package org.sheridancollege.expensetracker
+package project.stsBHS.dollarfinalproject.ui.income
 
-data class ListItem (val date: String, val description: String, val amount: Double)
+data class ListItem (val id: Long, val date: String, val description: String, val amount: Double)
