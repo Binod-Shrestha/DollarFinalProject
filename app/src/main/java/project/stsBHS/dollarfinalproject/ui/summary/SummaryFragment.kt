@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.sdk27.coroutines.onValueChanged
 import org.jetbrains.anko.uiThread
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.databinding.FragmentSummaryBinding
@@ -61,10 +62,22 @@ class SummaryFragment : Fragment() {
         month_picker.maxValue = months.size
         month_picker.wrapSelectorWheel = true
         month_picker.displayedValues = months
+
+        ShowSummary(year_picker.value, month_picker.value)
+
         month_picker.setOnValueChangedListener { picker, oldVal, newVal ->
-            binding.labelAnalysis.text = "$newVal"
+            ShowSummary(year_picker.value, month_picker.value)        }
+
+
+
+        year_picker.setOnValueChangedListener { picker, oldVal, newVal ->
+            ShowSummary(year_picker.value, month_picker.value)
         }
 
+
+    }
+
+    private fun ShowSummary(year: Int, month: Int){
         var db = context?.let { FinanceDatabase.getInstance(it) }
         var totalExpense: Double = 0.0
         var totalIncome: Double = 0.0
@@ -73,12 +86,20 @@ class SummaryFragment : Fragment() {
             var incomes = db?.financeDao()?.getAllIncomes()
 
             if (expenses != null) {
-                for (x in expenses) totalExpense += x.amount
+                for (x in expenses){
+                    var dt = x.date.split('/')
+                    if(year == dt[0].toInt() && month == dt[1].toInt() ) {
+                        totalExpense += x.amount
+                    }
+                }
             }
 
             if (incomes != null) {
-                for(x in incomes){
-                    totalIncome += x.amount
+                for (x in incomes){
+                    var dt = x.date.split('/')
+                    if(year == dt[0].toInt() && month == dt[1].toInt() ) {
+                        totalIncome += x.amount
+                    }
                 }
             }
 
@@ -87,16 +108,18 @@ class SummaryFragment : Fragment() {
                 totalIncome = (((totalIncome * 100).toInt()).toDouble()) / 100
                 binding.labelExpense.text = "$ " + totalExpense.toString()
                 binding.labelIncome.text = "$ " + totalIncome.toString()
+
+                // Analysis of income and expense
+                if(totalIncome > totalExpense){
+                    binding.labelAnalysis.text = "Good Saving"
+                }else if(totalIncome < totalExpense){
+                    binding.labelAnalysis.text = "Spent More"
+                }else{
+                    binding.labelAnalysis.text = "Break Even"
+                }
             }
 
 
-        }
-
-        // Analysis of income and expense
-        when {
-            totalIncome > totalExpense -> binding.labelAnalysis.text = "Expense More"
-            totalIncome < totalExpense -> binding.labelAnalysis.text = "Good Saving"
-            else -> binding.labelAnalysis.text = "Break Even"
         }
     }
 }
