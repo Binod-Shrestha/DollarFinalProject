@@ -1,5 +1,8 @@
 package project.stsBHS.dollarfinalproject.ui.about
-
+/*Author: Binod Shrestha
+Student ID: 991462138
+Course: Android Advance Programming
+School: Sheridan College*/
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

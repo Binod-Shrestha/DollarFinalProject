@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--    /*Author: Binod Shrestha-->
+<!--    Student ID: 991462138-->
+<!--    Course: Android Advance Programming-->
+<!--    School: Sheridan College*/-->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+<!--    /*Author: Binod Shrestha-->
+<!--    Student ID: 991462138-->
+<!--    Course: Android Advance Programming-->
+<!--    School: Sheridan College*/-->
     <style name="NumberPickerStyle">
         <item name="android:textSize">20sp</item>
     </style>

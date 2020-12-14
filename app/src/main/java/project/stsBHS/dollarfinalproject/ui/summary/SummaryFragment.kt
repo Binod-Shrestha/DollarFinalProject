@@ -1,5 +1,9 @@
 package project.stsBHS.dollarfinalproject.ui.summary
 
+/*Author: Binod Shrestha
+Student ID: 991462138
+Course: Android Advance Programming
+School: Sheridan College*/
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +11,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.sdk27.coroutines.onValueChanged
 import org.jetbrains.anko.uiThread
 import project.stsBHS.dollarfinalproject.R
 import project.stsBHS.dollarfinalproject.databinding.FragmentSummaryBinding

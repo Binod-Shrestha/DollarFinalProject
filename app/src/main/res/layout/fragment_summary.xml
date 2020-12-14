@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--    /*Author: Binod Shrestha-->
+<!--    Student ID: 991462138-->
+<!--    Course: Android Advance Programming-->
+<!--    School: Sheridan College*/-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -97,19 +101,24 @@
 
         <TableRow
             android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content">
 
             <TextView
 
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
+                android:width="160dp"
                 android:text="Expenses"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <TextView
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="10dp"
+                android:width="160dp"
                 android:text="Income"
+                android:layout_marginRight="10dp"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -122,7 +131,7 @@
             <TextView
                 android:id="@+id/label_expense"
                 android:layout_marginLeft="30dp"
-                android:text="$2545.00"
+                android:text="$0.00"
                 android:textAlignment="center"
                 android:textColor="#FF0000"
                 android:textSize="24sp"
@@ -133,7 +142,7 @@
             <TextView
                 android:id="@+id/label_income"
                 android:layout_marginLeft="40dp"
-                android:text="$2300.00"
+                android:text="$0.00"
                 android:textAlignment="center"
                 android:textColor="#0E8C13"
                 android:textSize="24sp"
