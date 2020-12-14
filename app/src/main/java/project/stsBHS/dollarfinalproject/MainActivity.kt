@@ -1,5 +1,9 @@
 package project.stsBHS.dollarfinalproject
 
+/*Author: Binod Shrestha
+Student ID: 991462138
+Course: Android Advance Programming
+School: Sheridan College*/
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -13,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,9 @@
 <resources>
+
+<!--    /*Author: Binod Shrestha-->
+<!--    Student ID: 991462138-->
+<!--    Course: Android Advance Programming-->
+<!--    School: Sheridan College*/-->
     <string name="app_name">DollarFinalProject</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
